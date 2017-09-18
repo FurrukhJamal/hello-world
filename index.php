@@ -5,7 +5,6 @@
 
   shuffle($quote);
 ?>
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -18,7 +17,7 @@
         font-size: 24px;
         font-family: "Comic Sans Ms", cursive;
     }
-    .header, .info, .quote
+    .header, .info, .quote, .links
     {
       margin: 10px auto 0px auto;
       text-align: center;
@@ -57,6 +56,49 @@
       text-shadow: 5px 4px 4px  #f7bc88;
       width:750px;
     }
+    .links
+    {
+
+      width: 400px;
+      text-align: center;
+    }
+    .links h3
+    {
+      color:#00008b;
+      text-transform: capitalize;
+    }
+    .links ul
+    {
+      list-style-type: none;
+      text-align: center;
+
+
+
+    }
+    .links a
+    {
+      text-decoration: none;
+      color: #e6e6e6;
+    }
+    .links a:hover
+    {
+      color: #696969;
+    }
+    .links li
+    {
+
+      background-color: #696969;
+      border: 2px solid #696969;
+      margin-top: 5px;
+      margin-left: 100px;
+      border-radius: 8px;
+      padding: 3px 3px;
+      width: 30%;
+    }
+    .links li:hover
+    {
+      background-color: #e6e6e6;
+    }
 
 
 
@@ -75,6 +117,39 @@
       <q><?= $quote[0] ?></q>
 
     </div>
+    <div class="links">
+      <h3>Projects i have worked on</h3>
+      <ul>
+        <li><a href="">Project1</a></li>
+        <li><a href="#">Project2</a></li>
+        <li><a href="#">Project3</a></li>
+      </ul>
+
+    </div>
 
   </body>
+  <script type="text/javascript">
+    var quotes = ["You can do anything, but not everything.—David Allen",
+              "You miss 100 percent of the shots you never take.—Wayne Gretzky",
+              "You must be the change you wish to see in the world.—Gandhi"];
+
+    var quote = document.getElementsByTagName('q');
+    console.log(quote[0].textContent);
+
+    var counter = 0;
+
+    //setting up a time interval
+    window.setInterval(function (){
+      quote[0].textContent = quotes[counter];
+      counter++;
+
+      if (counter >= quotes.length)
+      {
+        counter = 0;
+      }
+    }, 8000);
+
+
+
+  </script>
 </html>
